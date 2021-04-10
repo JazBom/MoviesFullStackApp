@@ -10,21 +10,23 @@ const Movie = require('../models/movie');
 
 //middleware to Verify JWT token
 //reject request if not valid
+// console.log("Process", process.env);
+// const secretKey = process.env.SECRET; //SALTING - would normally capture the value from outside code, not hard code it
 const secretKey = '87CB9E5B-7C0B-4717-8D14-CCC3C41B6BBB'; //GUID
-router.use((req, res, next) => {
-  const token = req.get('token');
+// router.use((req, res, next) => {
+//   const token = req.get('token');
 
-  jwt.verify(token, secretKey, {algorithms: ["HS256"]}, (err, decode) => {
-    if(!err) {
-      req.user = decode; //store user info on request object
-      next(); //middleware complete, move to next endpoint
-    }
-    else {
-      res.status(401).send('please login');
-    }
-  })
+//   jwt.verify(token, secretKey, {algorithms: ["HS256"]}, (err, decode) => {
+//     if(!err) {
+//       req.user = decode; //store user info on request object
+//       next(); //middleware complete, move to next endpoint
+//     }
+//     else {
+//       res.status(401).send('please login');
+//     }
+//   })
 
-})
+// })
 
 // Creating the index route
 // index route should show all the fruits
