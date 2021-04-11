@@ -4,7 +4,9 @@
   "description": "",
   "main": "sum.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage=true",
+    "test:watch": "jest --watch"
   },
   "author": "",
   "license": "ISC",
